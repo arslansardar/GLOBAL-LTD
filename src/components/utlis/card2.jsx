@@ -39,26 +39,6 @@ const data1 = [
   },
 ];
 
-const data2 = [
-  {
-    messages: "2 הודעות חדשות",
-    icon: MessageIcon,
-    errors: "2 1 תקלה מדווחת",
-    errorIcon: DangerIcon,
-    requests: "1 בקשה חדשה",
-    requestIcon: TextMessageIcon,
-    progress: 90,
-  },
-  {
-    messages: "2 הודעות חדשות",
-    icon: MessageIcon,
-    errors: "2 1 תקלה מדווחת",
-    errorIcon: DangerIcon,
-    requests: "1 בקשה חדשה",
-    requestIcon: TextMessageIcon,
-    progress: 90,
-  },
-];
 
 function CustomCards() {
   return (

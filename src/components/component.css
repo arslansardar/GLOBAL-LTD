@@ -145,7 +145,7 @@
 .custom-dropdown {
   display: flex;
   justify-content: space-between; /* This spreads out the child elements */
-  width: 300px;
+  width: 400px;
 }
 
 .button-end {
@@ -192,10 +192,97 @@
   width: 20px;
   height: 22.857px;
   border-radius: 2px;
-
 }
 .row-container {
   display: flex;
   align-items: center; /* Align vertically center */
   gap: 10px; /* Optional: Adds space between the items */
+}
+
+/* --------------------------------------mian-page-2---------------------------------- */
+
+.main-row {
+  background-color: #0c0c0c;
+  width: 100%;
+  height: 80vh;
+  margin: 0;
+  padding: 0;
+}
+
+.bordered-col {
+  border-left: 1px solid #646464;
+  border-right: 1px solid #646464;
+}
+.page-content {
+  color: #bebebe;
+  text-align: center;
+  font-family: "Rubik", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.col-box {
+  width: 51px;
+  height: 60px;
+  margin-left: 12px;
+  margin-right: 12px;
+  position: relative;
+  border-radius: 2px;
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.centered-number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  /* Style your number here (font, color, size, etc.) */
+}
+
+.foot-row {
+  display: flex;
+  width: 100%;
+  height: 116px;
+  padding: 14px 0px;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  flex-shrink: 0;
+  border: 1px solid #5f6368;
+  background: #2b2b2c;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin: 0;
+  padding: 0;
+}
+.foot-row-text {
+  color: var(--light-blue-gray-e-1-e-5-ee, #e1e5ee);
+  font-family: "Rubik", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-align: right;
+}
+
+.foot-row-text span{
+  color: var(--gray-959595, #959595);
+  font-family: "Rubik", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+
 }
