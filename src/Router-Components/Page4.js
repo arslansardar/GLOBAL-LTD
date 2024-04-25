@@ -1,10 +1,10 @@
 import React from "react";
-import AddParkingLotWizardPopup from "../views/AddParkingLotWizardPopup";
+import ParkingSpotsNumbering from "../views/ParkingSpotsNumbering";
 
 export function Page4(props) {
   return (
     <>
-      <AddParkingLotWizardPopup />
+      <ParkingSpotsNumbering />
     </>
   );
 }

@@ -1,97 +1,103 @@
-import * as React from "react";
+import React from "react";
 import styled from "styled-components";
 
-const data = [
-  {
-    image:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/45dba5e4c57403de33ff16fd9f0405542d337da8c66f11ae59fd586639d3368d?apiKey=232681902e8f4be7961abae526196996&",
-    text: "חזרה",
-    icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/e6f5f45044ba525c72aab033be55040b32ca14af26e4bb97c17538a5530a7567?apiKey=232681902e8f4be7961abae526196996&",
-  },
-];
+const ButtonWithIcon = ({ text, icon, backgroundColor }) => (
+  <ButtonWrapper backgroundColor={backgroundColor}>
+    <ButtonContent>
+      <ButtonText>{text}</ButtonText>
+      <ButtonIcon src={icon} alt={`${text} icon`} />
+    </ButtonContent>
+  </ButtonWrapper>
+);
 
-function Footer() {
+const Button = ({ text, backgroundColor }) => (
+  <ButtonWrapper backgroundColor={backgroundColor}>
+    {text}
+  </ButtonWrapper>
+);
+
+const Footer = () => {
+  const buttons = [
+    {
+      text: "שמירה והפעלת חניון",
+      icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/a8aec95147426cb0999fc833cdbaca1b373f8c9252b3aea70d88a0f35c965edc?apiKey=232681902e8f4be7961abae526196996&",
+      backgroundColor: "var(--darker-aqua-015-b-5-e, #015b5e)",
+    },
+    {
+      text: "שמירה ויציאה",
+      backgroundColor: "#3975bb",
+    },
+    {
+      text: "חזרה",
+      icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/e6f5f45044ba525c72aab033be55040b32ca14af26e4bb97c17538a5530a7567?apiKey=232681902e8f4be7961abae526196996&",
+      backgroundColor: "#3975bb",
+    },
+  ];
+
   return (
     <Container>
-      {data.map((item, index) => (
-        <Card key={index}>
-          <CardImage src={item.image} alt="Card Image" />
-          <CardContent>
-            <CardText>
-              <Text>{item.text}</Text>
-              <Icon src={item.icon} alt="Card Icon" />
-            </CardText>
-          </CardContent>
-        </Card>
+      {buttons.map((button, index) => (
+        <React.Fragment key={index}>
+          {button.icon ? (
+            <ButtonWithIcon {...button} />
+          ) : (
+            <Button {...button} />
+          )}
+        </React.Fragment>
       ))}
     </Container>
   );
-}
+};
 
 const Container = styled.div`
-  align-items: start;
-  border-radius: 6px 6px 0 0;
+  border-radius: 6px 6px 0px 0px;
   background-color: var(--light-light-gray-f-5-f-5-f-5, #f5f5f5);
   display: flex;
-  margin-top: 32px;
-  width: 100%;
-  flex-direction: column;
+  margin-top: 55px;
+  gap: 20px;
   font-size: 22px;
   color: #fff;
   font-weight: 500;
   text-align: center;
-  justify-content: center;
   padding: 12px 40px;
 
   @media (max-width: 991px) {
-    max-width: 100%;
+    flex-wrap: wrap;
+    margin-top: 40px;
     padding: 0 20px;
   }
 `;
 
-const Card = styled.div`
-  display: flex;
-  gap: 20px;
-  justify-content: end;
-`;
-
-const CardImage = styled.img`
-  aspect-ratio: 2.7;
-  object-fit: cover;
-  width: 130px;
-  border-radius: 10px;
-  border: 1px solid rgba(78, 185, 177, 1);
-  max-width: 100%;
-`;
-
-const CardContent = styled.div`
-  display: flex;
-  flex-direction: column;
+const ButtonWrapper = styled.div`
   justify-content: center;
   border-radius: 10px;
-  background-color: #a8abb0;
-  padding: 11px 28px;
+  border: 1px solid rgba(78, 185, 177, 1);
+  background-color: ${(props) => props.backgroundColor};
+  display: flex;
+  flex-direction: column;
+  padding: 11px 31px;
 
   @media (max-width: 991px) {
     padding: 0 20px;
   }
 `;
 
-const CardText = styled.div`
-  display: flex;
-  gap: 2px;
+const ButtonContent = styled.div`
   justify-content: center;
-  align-items: center;
+  align-item:center;
+  display: flex;
+  gap: 6px;
 `;
 
-const Text = styled.span`
+const ButtonText = styled.span`
   font-family: Rubik, sans-serif;
 `;
 
-const Icon = styled.img`
+const ButtonIcon = styled.img`
   width: 24px;
-  aspect-ratio: 1;
-  object-fit: cover;
+  height: 24px;
+  object-fit: contain;
+  align-self: start;
 `;
 
 export default Footer;
