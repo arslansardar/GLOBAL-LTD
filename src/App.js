@@ -5,6 +5,7 @@ import Page1 from "./Router-Components/Page1";
 import Page2 from "./Router-Components/Page2"; // Assuming you have another component
 import "./components/component.css";
 import { Page3 } from "./Router-Components/Page3";
+import { Page4 } from "./Router-Components/Page4";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <Route path="/" element={<Page1 />} />
         <Route path="/page2" element={<Page2 />} />
         <Route path="/page3" element={<Page3 />} />
+        <Route path="/page4" element={<Page4 />} />
       </Routes>
     </Router>
   );
